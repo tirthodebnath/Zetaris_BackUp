@@ -1,0 +1,1 @@
+INSERT INTO metastore.schema_store_view_container (id, name, case_sensitive_name, fk_organisation_id, description) VALUES ('1571411', 'TIRTHO_VIEW_CONTAINER', 'tirtho_view_container', '1568338', '');
