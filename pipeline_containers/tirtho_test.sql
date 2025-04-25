@@ -11,11 +11,11 @@ INSERT INTO metastore.pipeline_sqltable (id, source_tables, sql_query) VALUES ('
 INSERT INTO metastore.pipeline_sqltable (id, source_tables, sql_query) VALUES ('1571819', NULL, 'select * from NYC_Data.vehicle');
 INSERT INTO metastore.pipeline_datasource (id, datasource_table) VALUES ('1579085', '`NY_WEATHER`.`nyc_weather`');
 INSERT INTO metastore.pipeline_join (id, join_tables, join_predicate, filter_expression, order_by) VALUES ('1571845', 'crash,vehicle', '(vehicle.collision_id(+) = crash.collision_id)', NULL, NULL);
-INSERT INTO metastore.pipeline_node_property (id, property_key, property_value, fk_pipeline_node_id) VALUES ('1571906', 'delimiter', ',', '1571901');
-INSERT INTO metastore.pipeline_node_property (id, property_key, property_value, fk_pipeline_node_id) VALUES ('1571905', 'format', 'csv', '1571901');
-INSERT INTO metastore.pipeline_node_property (id, property_key, property_value, fk_pipeline_node_id) VALUES ('1571904', 'storage', 'dffs', '1571901');
-INSERT INTO metastore.pipeline_node_property (id, property_key, property_value, fk_pipeline_node_id) VALUES ('1571903', 'mode', 'append', '1571901');
 INSERT INTO metastore.pipeline_node_property (id, property_key, property_value, fk_pipeline_node_id) VALUES ('1571902', 'path', 'tirtho/sink_data', '1571901');
+INSERT INTO metastore.pipeline_node_property (id, property_key, property_value, fk_pipeline_node_id) VALUES ('1571903', 'mode', 'append', '1571901');
+INSERT INTO metastore.pipeline_node_property (id, property_key, property_value, fk_pipeline_node_id) VALUES ('1571904', 'storage', 'dffs', '1571901');
+INSERT INTO metastore.pipeline_node_property (id, property_key, property_value, fk_pipeline_node_id) VALUES ('1571905', 'format', 'csv', '1571901');
+INSERT INTO metastore.pipeline_node_property (id, property_key, property_value, fk_pipeline_node_id) VALUES ('1571906', 'delimiter', ',', '1571901');
 INSERT INTO metastore.pipeline_node_schema (id, column_name, column_alias, data_type, sql_expression, fk_pipeline_node_id) VALUES ('1571818', 'NY_VEHICLE_COLLISIONS.crash.foo', 'foo', '"string"', NULL, '1571788');
 INSERT INTO metastore.pipeline_node_schema (id, column_name, column_alias, data_type, sql_expression, fk_pipeline_node_id) VALUES ('1571817', 'NY_VEHICLE_COLLISIONS.crash.vehicle_type_code_5', 'vehicle_type_code_5', '"string"', NULL, '1571788');
 INSERT INTO metastore.pipeline_node_schema (id, column_name, column_alias, data_type, sql_expression, fk_pipeline_node_id) VALUES ('1571816', 'NY_VEHICLE_COLLISIONS.crash.vehicle_type_code_4', 'vehicle_type_code_4', '"string"', NULL, '1571788');

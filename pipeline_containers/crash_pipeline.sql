@@ -4,10 +4,10 @@ INSERT INTO metastore.pipeline_node (id, name, case_sensitive_name, description,
 INSERT INTO metastore.pipeline_node (id, name, case_sensitive_name, description, fk_pipeline_relation_id, pipeline_type, sources) VALUES ('1571115', 'sqltable_person', 'sqltable_person', NULL, '1570930', 'SQLTable', NULL);
 INSERT INTO metastore.pipeline_node (id, name, case_sensitive_name, description, fk_pipeline_relation_id, pipeline_type, sources) VALUES ('1571137', 'sqltable_vehicle', 'sqltable_vehicle', NULL, '1570930', 'SQLTable', NULL);
 INSERT INTO metastore.pipeline_node (id, name, case_sensitive_name, description, fk_pipeline_relation_id, pipeline_type, sources) VALUES ('1571163', 'join_2', 'join_2', NULL, '1570930', 'JOIN', 'sqltable_crash,sqltable_person,sqltable_vehicle');
+INSERT INTO metastore.pipeline_sqltable (id, source_tables, sql_query) VALUES ('1571115', NULL, 'select * from NY_VEHICLE_COLLISIONS.person');
+INSERT INTO metastore.pipeline_sqltable (id, source_tables, sql_query) VALUES ('1571084', NULL, 'select * from NY_VEHICLE_COLLISIONS.crash');
 INSERT INTO metastore.pipeline_sqltable (id, source_tables, sql_query) VALUES ('1571137', NULL, 'select *
 from NY_VEHICLE_COLLISIONS.vehicle');
-INSERT INTO metastore.pipeline_sqltable (id, source_tables, sql_query) VALUES ('1571084', NULL, 'select * from NY_VEHICLE_COLLISIONS.crash');
-INSERT INTO metastore.pipeline_sqltable (id, source_tables, sql_query) VALUES ('1571115', NULL, 'select * from NY_VEHICLE_COLLISIONS.person');
 INSERT INTO metastore.pipeline_join (id, join_tables, join_predicate, filter_expression, order_by) VALUES ('1571163', 'sqltable_crash,sqltable_person,sqltable_vehicle', '(sqltable_crash.collision_id(+) = sqltable_person.collision_id) AND (sqltable_crash.collision_id(+) = sqltable_vehicle.collision_id)', NULL, NULL);
 INSERT INTO metastore.pipeline_node_schema (id, column_name, column_alias, data_type, sql_expression, fk_pipeline_node_id) VALUES ('1571136', 'NY_VEHICLE_COLLISIONS.person.person_sex', 'person_sex', '"string"', NULL, '1571115');
 INSERT INTO metastore.pipeline_node_schema (id, column_name, column_alias, data_type, sql_expression, fk_pipeline_node_id) VALUES ('1571135', 'NY_VEHICLE_COLLISIONS.person.contributing_factor_2', 'contributing_factor_2', '"string"', NULL, '1571115');
