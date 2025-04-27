@@ -151,4 +151,16 @@ INSERT INTO metastore.pipeline_projection (id, filter_expression, windows_spec, 
 INSERT INTO metastore.pipeline_projection (id, filter_expression, windows_spec, order_by) VALUES ('1568608', 'borough is not null AND zip_code is not null', NULL, NULL);
 INSERT INTO metastore.pipeline_simple_dq (id) VALUES ('1568613');
 INSERT INTO metastore.pipeline_simple_dq (id) VALUES ('1568642');
+INSERT INTO metastore.pipeline_simple_dq_rule (id, columns, name, expression, filter, fk_pipeline_simple_dq_id) VALUES ('1568623', 'zip_code', 'Pattern', '^[0-9]{5}(?:-[0-9]{4})?$', NULL, '1568613');
+INSERT INTO metastore.pipeline_simple_dq_rule (id, columns, name, expression, filter, fk_pipeline_simple_dq_id) VALUES ('1568622', 'zip_code', 'Completeness', NULL, NULL, '1568613');
+INSERT INTO metastore.pipeline_simple_dq_rule (id, columns, name, expression, filter, fk_pipeline_simple_dq_id) VALUES ('1568621', 'borough', 'Completeness', NULL, NULL, '1568613');
+INSERT INTO metastore.pipeline_simple_dq_rule (id, columns, name, expression, filter, fk_pipeline_simple_dq_id) VALUES ('1568620', 'crash_date', 'Completeness', NULL, NULL, '1568613');
+INSERT INTO metastore.pipeline_simple_dq_rule (id, columns, name, expression, filter, fk_pipeline_simple_dq_id) VALUES ('1568619', 'collision_id', 'Completeness', NULL, NULL, '1568613');
+INSERT INTO metastore.pipeline_simple_dq_rule (id, columns, name, expression, filter, fk_pipeline_simple_dq_id) VALUES ('1568618', 'collision_id', 'Uniqueness', NULL, NULL, '1568613');
+INSERT INTO metastore.pipeline_simple_dq_rule (id, columns, name, expression, filter, fk_pipeline_simple_dq_id) VALUES ('1568652', 'zip_code', 'Pattern', '^[0-9]{5}(?:-[0-9]{4})?$', NULL, '1568642');
+INSERT INTO metastore.pipeline_simple_dq_rule (id, columns, name, expression, filter, fk_pipeline_simple_dq_id) VALUES ('1568651', 'zip_code', 'Completeness', NULL, NULL, '1568642');
+INSERT INTO metastore.pipeline_simple_dq_rule (id, columns, name, expression, filter, fk_pipeline_simple_dq_id) VALUES ('1568650', 'borough', 'Completeness', NULL, NULL, '1568642');
+INSERT INTO metastore.pipeline_simple_dq_rule (id, columns, name, expression, filter, fk_pipeline_simple_dq_id) VALUES ('1568649', 'crash_date', 'Completeness', NULL, NULL, '1568642');
+INSERT INTO metastore.pipeline_simple_dq_rule (id, columns, name, expression, filter, fk_pipeline_simple_dq_id) VALUES ('1568648', 'collision_id', 'Completeness', NULL, NULL, '1568642');
+INSERT INTO metastore.pipeline_simple_dq_rule (id, columns, name, expression, filter, fk_pipeline_simple_dq_id) VALUES ('1568647', 'collision_id', 'Uniqueness', NULL, NULL, '1568642');
 INSERT INTO metastore.pipeline_coordinates (id, coordinates, fk_pipeline_relation_id) VALUES ('6c974d67-d2a5-4942-b2c9-a1800130cd22', '{"positions":[{"name":"sqltable_0","type":"SQLTable","xCord":"83px","yCord":"106px","isExpand":null},{"name":"sqltable_1","type":"SQLTable","xCord":"416px","yCord":"98px","isExpand":null},{"name":"join_2","type":"Join","xCord":"230px","yCord":"227px","isExpand":null}],"connections":[{"source":"sqltable_0","target":"join_2","targetType":0},{"source":"sqltable_1","target":"join_2","targetType":0}]}', '1569931');
