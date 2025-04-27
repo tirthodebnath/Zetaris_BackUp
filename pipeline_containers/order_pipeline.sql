@@ -1,8 +1,8 @@
 INSERT INTO metastore.pipeline_container (id, name, case_sensitive_name, description, fk_organisation_id) VALUES ('1570321', 'order_pipeline', 'ORDER_PIPELINE', NULL, '1568338');
 INSERT INTO metastore.pipeline_relation (id, name, case_sensitive_name, description, fk_pipeline_container_id) VALUES ('1570322', 'order_ff', 'order_ff', NULL, '1570321');
-INSERT INTO metastore.pipeline_node (id, name, case_sensitive_name, description, fk_pipeline_relation_id, pipeline_type, sources) VALUES ('1570362', 'join_2', 'join_2', NULL, '1570322', 'JOIN', 'sqltable_order_order,sqltable_product');
-INSERT INTO metastore.pipeline_node (id, name, case_sensitive_name, description, fk_pipeline_relation_id, pipeline_type, sources) VALUES ('1570353', 'sqltable_product', 'sqltable_product', NULL, '1570322', 'SQLTable', NULL);
 INSERT INTO metastore.pipeline_node (id, name, case_sensitive_name, description, fk_pipeline_relation_id, pipeline_type, sources) VALUES ('1570323', 'sqltable_order_order', 'sqltable_order_order', NULL, '1570322', 'SQLTable', NULL);
+INSERT INTO metastore.pipeline_node (id, name, case_sensitive_name, description, fk_pipeline_relation_id, pipeline_type, sources) VALUES ('1570353', 'sqltable_product', 'sqltable_product', NULL, '1570322', 'SQLTable', NULL);
+INSERT INTO metastore.pipeline_node (id, name, case_sensitive_name, description, fk_pipeline_relation_id, pipeline_type, sources) VALUES ('1570362', 'join_2', 'join_2', NULL, '1570322', 'JOIN', 'sqltable_order_order,sqltable_product');
 INSERT INTO metastore.pipeline_sqltable (id, source_tables, sql_query) VALUES ('1570353', NULL, 'select * from my_test_db.product_catalog');
 INSERT INTO metastore.pipeline_sqltable (id, source_tables, sql_query) VALUES ('1570323', NULL, 'select * from my_test_db.orders_order');
 INSERT INTO metastore.pipeline_join (id, join_tables, join_predicate, filter_expression, order_by) VALUES ('1570362', 'sqltable_order_order,sqltable_product', '(sqltable_order_order.sku = sqltable_product.sku)', NULL, NULL);
