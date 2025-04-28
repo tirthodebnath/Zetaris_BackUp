@@ -1,0 +1,1 @@
+INSERT INTO metastore.pipeline_relation (id, name, case_sensitive_name, description, fk_pipeline_container_id) VALUES ('1568624', 'crash_data_aggregation', 'crash_data_aggregation', NULL, '1568601');

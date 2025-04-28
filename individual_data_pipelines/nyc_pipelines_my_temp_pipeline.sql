@@ -1,0 +1,1 @@
+INSERT INTO metastore.pipeline_relation (id, name, case_sensitive_name, description, fk_pipeline_container_id) VALUES ('1569931', 'my_temp_pipeline', 'my_temp_pipeline', NULL, '1568601');
