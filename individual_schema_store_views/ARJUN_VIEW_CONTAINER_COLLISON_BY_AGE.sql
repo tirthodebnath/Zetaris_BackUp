@@ -1,0 +1,7 @@
+INSERT INTO schema_store_view (id, name, query, description, materialized_table, generator, fk_organisation_id, fk_schema_store_view_container_id) VALUES ('1571407', 'COLLISON_BY_AGE', ' (select t1.crash_date,t2.person_age, count(t1.collision_id) as total_collison  from NY_VEHICLE_COLLISIONS.crash t1 left join NY_VEHICLE_COLLISIONS.person t2
+on t1.collision_id = t2.collision_id
+group by t1.crash_date,t2.person_age ORDER BY 1,2)', NULL, NULL, 'query_builder', '1568338', '1570178') using metastore;
+INSERT INTO schema_store_view_schema (id, fk_schema_store_view_id, column_name, data_type) VALUES ('1571408', '1571407', 'crash_date', 'date') using metastore;
+INSERT INTO schema_store_view_schema (id, fk_schema_store_view_id, column_name, data_type) VALUES ('1571409', '1571407', 'person_age', 'integer') using metastore;
+INSERT INTO schema_store_view_schema (id, fk_schema_store_view_id, column_name, data_type) VALUES ('1571410', '1571407', 'total_collison', 'long') using metastore;
+INSERT INTO schema_store_view_meta (id, meta_data, fk_schema_store_view_id) VALUES ('828edb0c-8140-4280-9e8f-97b95c5abcf3', '{"viewName":"collison_by_age","tables":[],"selectedItems":[],"groupbyColumns":[],"groupbyRollupColumns":[],"groupbyCubeColumns":[],"predicates":[],"orderbys":[],"havings":[],"emptyItems":[],"columnConnections":[],"tableConnections":[],"tableUi":[],"__type":"Object"}', '1571407') using metastore;
