@@ -7,6 +7,7 @@ GROUP BY product_catalog.category,orders_order.sku)', NULL, NULL, 'query_builder
 INSERT INTO schema_store_view (id, name, query, description, materialized_table, generator, fk_organisation_id, fk_schema_store_view_container_id) VALUES ('1571407', 'COLLISON_BY_AGE', ' (select t1.crash_date,t2.person_age, count(t1.collision_id) as total_collison  from NY_VEHICLE_COLLISIONS.crash t1 left join NY_VEHICLE_COLLISIONS.person t2
 on t1.collision_id = t2.collision_id
 group by t1.crash_date,t2.person_age ORDER BY 1,2)', NULL, NULL, 'query_builder', '1568338', '1570178') using metastore;
+INSERT INTO schema_store_view_schema (id, fk_schema_store_view_id, column_name, data_type) VALUES ('15707757', '1570819', 'lsp_name', 'string') using metastore;
 INSERT INTO schema_store_view_schema (id, fk_schema_store_view_id, column_name, data_type) VALUES ('1570859', '1570819', 'sku', 'string') using metastore;
 INSERT INTO schema_store_view_schema (id, fk_schema_store_view_id, column_name, data_type) VALUES ('1570858', '1570819', 'B_GMV', 'string') using metastore;
 INSERT INTO schema_store_view_schema (id, fk_schema_store_view_id, column_name, data_type) VALUES ('1570857', '1570819', 'lsp_name', 'string') using metastore;
