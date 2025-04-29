@@ -1,0 +1,7 @@
+INSERT INTO schema_store_view (id, name, query, description, materialized_table, generator, fk_organisation_id, fk_schema_store_view_container_id) VALUES ('1570860', 'CATEGORY_ORDERS', ' (select product_catalog.category,orders_order.sku,sum(cast(orders_order.total as float)) as gmv from my_test_db.orders_order  INNER JOIN
+my_test_db.product_catalog  on product_catalog.sku =  orders_order.sku
+GROUP BY product_catalog.category,orders_order.sku)', NULL, NULL, 'query_builder', '1568338', '1570178') using metastore;
+INSERT INTO schema_store_view_schema (id, fk_schema_store_view_id, column_name, data_type) VALUES ('1570861', '1570860', 'category', 'string') using metastore;
+INSERT INTO schema_store_view_schema (id, fk_schema_store_view_id, column_name, data_type) VALUES ('1570862', '1570860', 'sku', 'string') using metastore;
+INSERT INTO schema_store_view_schema (id, fk_schema_store_view_id, column_name, data_type) VALUES ('1570863', '1570860', 'gmv', 'double') using metastore;
+INSERT INTO schema_store_view_meta (id, meta_data, fk_schema_store_view_id) VALUES ('84743432-489f-4310-b966-0e00831c6068', '{"viewName":"category_orders","tables":[],"selectedItems":[],"groupbyColumns":[],"groupbyRollupColumns":[],"groupbyCubeColumns":[],"predicates":[],"orderbys":[],"havings":[],"emptyItems":[],"columnConnections":[],"tableConnections":[],"tableUi":[],"__type":"Object"}', '1570860') using metastore;
