@@ -1,9 +1,9 @@
 INSERT INTO pipeline_container (id, name, case_sensitive_name, description, fk_organisation_id) VALUES ('1570872', 'crash_pipeline', 'CRASH_PIPELINE', NULL, '1568338') using metastore;
 INSERT INTO pipeline_relation (id, name, case_sensitive_name, description, fk_pipeline_container_id) VALUES ('1570930', 'crash_person_collison', 'crash_person_collison', NULL, '1570872') using metastore;
-INSERT INTO pipeline_node (id, name, case_sensitive_name, description, fk_pipeline_relation_id, pipeline_type, sources) VALUES ('1571084', 'sqltable_crash', 'sqltable_crash', NULL, '1570930', 'SQLTable', NULL) using metastore;
-INSERT INTO pipeline_node (id, name, case_sensitive_name, description, fk_pipeline_relation_id, pipeline_type, sources) VALUES ('1571115', 'sqltable_person', 'sqltable_person', NULL, '1570930', 'SQLTable', NULL) using metastore;
-INSERT INTO pipeline_node (id, name, case_sensitive_name, description, fk_pipeline_relation_id, pipeline_type, sources) VALUES ('1571137', 'sqltable_vehicle', 'sqltable_vehicle', NULL, '1570930', 'SQLTable', NULL) using metastore;
 INSERT INTO pipeline_node (id, name, case_sensitive_name, description, fk_pipeline_relation_id, pipeline_type, sources) VALUES ('1571163', 'join_2', 'join_2', NULL, '1570930', 'JOIN', 'sqltable_crash,sqltable_person,sqltable_vehicle') using metastore;
+INSERT INTO pipeline_node (id, name, case_sensitive_name, description, fk_pipeline_relation_id, pipeline_type, sources) VALUES ('1571137', 'sqltable_vehicle', 'sqltable_vehicle', NULL, '1570930', 'SQLTable', NULL) using metastore;
+INSERT INTO pipeline_node (id, name, case_sensitive_name, description, fk_pipeline_relation_id, pipeline_type, sources) VALUES ('1571115', 'sqltable_person', 'sqltable_person', NULL, '1570930', 'SQLTable', NULL) using metastore;
+INSERT INTO pipeline_node (id, name, case_sensitive_name, description, fk_pipeline_relation_id, pipeline_type, sources) VALUES ('1571084', 'sqltable_crash', 'sqltable_crash', NULL, '1570930', 'SQLTable', NULL) using metastore;
 INSERT INTO pipeline_sqltable (id, source_tables, sql_query) VALUES ('1571115', NULL, 'select * from NY_VEHICLE_COLLISIONS.person') using metastore;
 INSERT INTO pipeline_sqltable (id, source_tables, sql_query) VALUES ('1571084', NULL, 'select * from NY_VEHICLE_COLLISIONS.crash') using metastore;
 INSERT INTO pipeline_sqltable (id, source_tables, sql_query) VALUES ('1571137', NULL, 'select *
