@@ -1,0 +1,5 @@
+INSERT INTO pipeline_relation (id, name, case_sensitive_name, description, fk_pipeline_container_id) VALUES ('1579604', 'pipel1', 'pipel1', NULL, '1579603') using metastore;
+INSERT INTO pipeline_node (id, name, case_sensitive_name, description, fk_pipeline_relation_id, pipeline_type, sources) VALUES ('1579605', 'ny_weather_nyc_weather', 'ny_weather_nyc_weather', NULL, '1579604', 'DATASOURCE', 'NY_WEATHER.nyc_weather') using metastore;
+INSERT INTO pipeline_node (id, name, case_sensitive_name, description, fk_pipeline_relation_id, pipeline_type, sources) VALUES ('1579630', 'projection_0', 'projection_0', NULL, '1579604', 'PROJECTION', 'ny_weather_nyc_weather') using metastore;
+INSERT INTO pipeline_datasource (id, datasource_table) VALUES ('1579605', '`NY_WEATHER`.`nyc_weather`') using metastore;
+INSERT INTO pipeline_projection (id, filter_expression, windows_spec, order_by) VALUES ('1579630', NULL, NULL, NULL) using metastore;
